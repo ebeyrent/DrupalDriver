@@ -158,7 +158,7 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
     if (!isset($this->version)) {
       // Support 6, 7 and 8.
       $version_constant_paths = array(
-        // Drupal 6.
+        // Drupal 5 and 6.
         '/modules/system/system.module',
         // Drupal 7.
         '/includes/bootstrap.inc',
@@ -183,7 +183,7 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
         $version = \Drupal::VERSION;
       }
       else {
-        throw new BootstrapException('Unable to determine Drupal core version. Supported versions are 6, 7, and 8.');
+        throw new BootstrapException('Unable to determine Drupal core version. Supported versions are 5, 6, 7, and 8.');
       }
 
       // Extract the major version from VERSION.
